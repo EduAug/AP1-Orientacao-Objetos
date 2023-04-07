@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "AP1_Estacionamento/1.0.0": {
+        "runtime": {
+          "AP1_Estacionamento.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AP1_Estacionamento/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
