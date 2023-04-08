@@ -32,7 +32,7 @@ namespace AP1_Estacionamento
 
         public bool UnicidadePlaca(string placa){
 
-            return listMotos.Any(h => h.Placa == placa);
+            return listMotos.Any(a => a.Placa == placa);
         }
 
         public void CadastrarMoto(Moto novaMoto){
@@ -49,7 +49,7 @@ namespace AP1_Estacionamento
         public Moto ConferirMoto(string placa){
             
             // Um "read" de apenas um objeto, baseado na Placa
-            var ResultMoto = listMotos.Find(e => e.Placa == placa);
+            var ResultMoto = listMotos.Find(b => b.Placa == placa);
             if (ResultMoto == null){
 
                 Console.WriteLine("Não existe moto de placa "+placa);
@@ -68,7 +68,7 @@ namespace AP1_Estacionamento
             // na lista, o índice não é uma string, e sim
             // um inteiro, logo, onde as strings forem iguais
             // pegar o valor inteiro do índice e atualizar lá
-            int checkPlaca = listMotos.FindIndex(v => v.Placa == placa);
+            int checkPlaca = listMotos.FindIndex(c => c.Placa == placa);
 
             // Reiterando minha lógica, não é possível atualizar
             // O modelo e a placa, uma vez que originalmente estes

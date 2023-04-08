@@ -28,7 +28,7 @@ namespace AP1_Estacionamento
 
         public bool UnicidadePlaca(string placa){
 
-            return listCarros.Any(h => h.Placa == placa);
+            return listCarros.Any(a => a.Placa == placa);
         }
 
         public void CadastrarCarro(Carro novoCar){
@@ -43,7 +43,7 @@ namespace AP1_Estacionamento
 
         public Carro ConferirCarro(string placa){
         
-            var ResultCarro = listCarros.Find(e => e.Placa == placa);
+            var ResultCarro = listCarros.Find(b => b.Placa == placa);
             if (ResultCarro == null){
 
                 Console.WriteLine("Não existe carro de placa "+placa);
@@ -54,7 +54,7 @@ namespace AP1_Estacionamento
 
         public void AtualizarCarro(string placa, string newPlaca, string newModelo, double newGas){
 
-            int checkPlaca = listCarros.FindIndex(f => f.Placa == placa);
+            int checkPlaca = listCarros.FindIndex(c => c.Placa == placa);
 
             if(checkPlaca == -1){
 
