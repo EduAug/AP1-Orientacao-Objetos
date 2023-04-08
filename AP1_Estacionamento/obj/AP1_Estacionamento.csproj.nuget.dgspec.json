@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pichau\\Desktop\\AP1_Estacionamento\\AP1_Estacionamento.csproj": {}
+    "C:\\Users\\Pichau\\Desktop\\AP1-Orientacao-Objetos\\AP1_Estacionamento\\AP1_Estacionamento.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pichau\\Desktop\\AP1_Estacionamento\\AP1_Estacionamento.csproj": {
+    "C:\\Users\\Pichau\\Desktop\\AP1-Orientacao-Objetos\\AP1_Estacionamento\\AP1_Estacionamento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\AP1_Estacionamento\\AP1_Estacionamento.csproj",
+        "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\AP1-Orientacao-Objetos\\AP1_Estacionamento\\AP1_Estacionamento.csproj",
         "projectName": "AP1_Estacionamento",
-        "projectPath": "C:\\Users\\Pichau\\Desktop\\AP1_Estacionamento\\AP1_Estacionamento.csproj",
+        "projectPath": "C:\\Users\\Pichau\\Desktop\\AP1-Orientacao-Objetos\\AP1_Estacionamento\\AP1_Estacionamento.csproj",
         "packagesPath": "C:\\Users\\Pichau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pichau\\Desktop\\AP1_Estacionamento\\obj\\",
+        "outputPath": "C:\\Users\\Pichau\\Desktop\\AP1-Orientacao-Objetos\\AP1_Estacionamento\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pichau\\AppData\\Roaming\\NuGet\\NuGet.Config"
