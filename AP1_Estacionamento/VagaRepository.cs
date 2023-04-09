@@ -70,7 +70,33 @@ namespace AP1_Estacionamento
             
             vagaOccupy.Estacionar(maq);
         }
+        public void Corrigir(string placa, string newPlaca, string newModelo, double newGas){
 
+            int checkPlaca = vagaRep.FindIndex(c => c.Estacionado != null && c.Estacionado.Placa == placa);
+
+            if(checkPlaca == -1){
+
+                Console.WriteLine("Placa inexistente");
+                return;
+            }
+            if(UnicidadePlaca(newPlaca)){
+
+                Console.WriteLine("Já existe um veículo com essa placa no sistema");
+                return;
+            }
+
+            if(vagaRep[checkPlaca].Estacionado != null){
+
+                vagaRep[checkPlaca].Estacionado.reSetPlaca(newPlaca);
+                vagaRep[checkPlaca].Estacionado.reSetModelo(newModelo);
+                vagaRep[checkPlaca].Estacionado.Combustivel = newGas;
+
+                Console.WriteLine("Placa: "+newPlaca+" | Modelo: "+newModelo+" | Tanque: "+newGas+"L");
+            }else{
+
+                Console.WriteLine("Erro: O Objeto em Vaga é nulo");
+            }
+        }
         public void Desocupar(Veiculo maq, int minEstacionados){
 
             var vagaOccupy = vagaRep.Find(d => d.Estacionado == maq);

@@ -102,18 +102,27 @@ namespace AP1_Estacionamento
         public void RemoverMoto(string placa, int minEstacionados){
 
             Moto bikeRemoval = null;
+            // Criar um objeto nulo para sobrescrever a vaga 
+            // Caso seja encontrado
 
             foreach(Moto bikePlaca in listMotos){
-
+                // Passamos um foreach para passar pela lista inteira
+                // De forma a parar apenas quando o veículo possuir
+                // Placa igual a inserida
                 if(bikePlaca.Placa == placa){
-
+                    // Após ser encontrado um veículo onde as placas batem
+                    // O veículo nulo será substituido pelo veículo correspondente
                     bikeRemoval = bikePlaca;
                     break;
                 }
             }
             if(bikeRemoval != null){
 
+                // Por fim, se o "veículo nulo" continuar nulo, o método é encerrado
+                // Do contrário, se o "veículo nulo" receber o veículo da placa
+                // Do parâmtero, o veículo da placa será removido
                 listMotos.Remove(bikeRemoval);
+                // E simultaneamente já é chamado o método para remover este da vaga
                 vagaRepo.Desocupar(bikeRemoval,minEstacionados);
 
                 Console.WriteLine("Removido do sistema moto de placa "+placa);

@@ -14,12 +14,13 @@ string newModelo = "";
 double newTanque = 0d;
 int selectVagaNum;
 int selectRead;
+int minParked = 1;
 
 while(resetMenu != 0){
 
     Console.WriteLine("Bem vindo ao sistema de controle de estacionamento //BRAND HERE//");
     Console.WriteLine("Selecione uma opção para efetuar");
-    Console.WriteLine("1- Inserir Veículo\t2- Conferir Vagas\t3- Corrigir Veículo\t4- Liberar Veículo\t5- Sair do sistema\n");
+    Console.WriteLine("1- Inserir Veículo\t2- Conferir Vagas\t3- Corrigir Veículo\t4- Liberar Vaga\t5- Sair do sistema\n");
     selectMenu = Convert.ToInt32(Console.ReadLine());
 
     switch(selectMenu){
@@ -146,8 +147,76 @@ while(resetMenu != 0){
             }
             break;
         case 3:
+
+            Console.Clear();
+            Console.WriteLine("\nVocê deseja atualizar uma moto (1) ou um carro (2)?");
+            selectType = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Atenção, tenha certeza de conferir os dados e contatar um superior antes de alterar os dados.");
+             switch(selectType){
+
+                case 1:
+
+                    Console.WriteLine("Insira a placa atual da moto a ser alterada:");
+                    existPlaca = Console.ReadLine();
+                    if(BikRepo.ConferirMoto(existPlaca) != null){
+
+                        Console.WriteLine("Insira a nova placa para a moto "+existPlaca+":");
+                        newPlaca = Console.ReadLine();
+                        Console.WriteLine("Insira o novo modelo para essa moto");
+                        newModelo = Console.ReadLine();
+                        Console.WriteLine("Por fim, o volume do tanque da moto");
+                        newTanque = Convert.ToDouble(Console.ReadLine());
+
+                        BikRepo.AtualizarMoto(existPlaca,newPlaca,newModelo,newTanque);
+                        VagaRepo.Corrigir(existPlaca,newPlaca,newModelo,newTanque);
+                    }
+                    break;
+                case 2:
+
+                    Console.WriteLine("Insira a placa atual do carro a ser alterado:");
+                    existPlaca = Console.ReadLine();
+                    if(CarRepo.ConferirCarro(existPlaca) != null){
+
+                        Console.WriteLine("Insira a nova placa do carro "+existPlaca+":"); 
+                        newPlaca = Console.ReadLine();
+                        Console.WriteLine("Insira o novo modelo desse carro:");
+                        newModelo = Console.ReadLine();
+                        Console.WriteLine("Por fim, o volume do tanque do carro");
+                        newTanque = Convert.ToDouble(Console.ReadLine());
+
+                        CarRepo.AtualizarCarro(existPlaca,newPlaca,newModelo,newTanque);
+                        VagaRepo.Corrigir(existPlaca,newPlaca,newModelo,newTanque);
+                    }
+                    break;
+                default:
+
+                    Console.WriteLine("Tipo de veículo não implementado no sistema");
+                    break;
+            }
             break;
         case 4:
+
+            Console.WriteLine("Insira a placa do veículo que deseja remover:");
+            existPlaca = Console.ReadLine();
+            Console.WriteLine("O veículo ficou estacionado por quantos minutos?");
+            minParked = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("O veículo a ser removido é uma moto(1) ou um carro(2)?");
+            selectType = Convert.ToInt32(Console.ReadLine());
+
+            switch(selectType){
+                case 1:
+
+                    BikRepo.RemoverMoto(existPlaca,minParked);
+                    break;
+                case 2:
+
+                    CarRepo.RemoverCarro(existPlaca,minParked);
+                    break;
+                default:
+
+                    Console.WriteLine("Veículo não suportado pelo sistema.");
+                    break;
+            }
             break;
         case 5:
             resetMenu = 0;
