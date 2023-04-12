@@ -1,6 +1,6 @@
 ﻿using AP1_Estacionamento;
 
-VagaRepository VagaRepo = new VagaRepository(6);
+VagaRepository VagaRepo = new VagaRepository(30);
 CarroRepository CarRepo = new CarroRepository(VagaRepo);
 MotoRepository BikRepo = new MotoRepository(VagaRepo);
 
